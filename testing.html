@@ -1,0 +1,55 @@
+<html>
+<body>
+    <div id="container">
+        <p id="message">Hello, World!</p>
+        <button id="changeText">Change Text</button>
+    </div>
+
+    <div onmousedown="console.log('Mouse button:', event.button)">Click me</div>
+    <div onclick="if(event.ctrlKey) console.log('Ctrl + Click!')">Ctrl + Click Me</div>
+    <input type="text" onkeydown="console.log('Key pressed!')" onkeyup="console.log('Key released!')">
+    <input type="text" onkeydown="if(event.ctrlKey && event.key === 'c') console.log('Ctrl + C pressed!')">
+    <input type="text" onkeydown="console.log('Key pressed:', event.key)">
+    <input type="text" onkeydown="messageElement.textContent +=event.key">
+
+    <div id="content">
+        <a href="https://example.com" id="testLink">Test Link</a>
+        <a href="https://goo.com" id="testLink">Test Link</a>
+    </div>
+
+    <script>
+
+
+        // Listen for mouseover events on the links
+        document.querySelectorAll('div').forEach(x => x.addEventListener('mouseover', function (e) {
+            if (e.target.tagName === 'A' && e.ctrlKey) {
+                e.preventDefault(); // Prevent the default action
+                window.open(e.target.href, '_blank'); // Open the link in a new tab
+            }
+        }));
+    </script>
+
+
+    <script>
+        // we select the paragraph element by its ID
+        let messageElement = document.getElementById("message");
+
+        // let's add event listener to button element using ID
+        document
+            .getElementById("changeText")
+            //.addEventListener("mousemove", function () {
+            .addEventListener("mousemove", function () {
+                // this  will change the text content of the paragraph element
+                messageElement.textContent += "Text Changed!\r\nhi...";
+            });
+    </script>
+</body>
+</html>
+
+
+<!--
+document.querySelectorAll('p').forEach(e=>{
+e.style.backgroundColor = "pink";
+})
+-->
+
