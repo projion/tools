@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search All</title>
+</head>
+<body>
+
+    <form id="searchForm">
+        <!--<input type="text" id="searchField" placeholder="Enter your search query">-->
+        <textarea id="searchField" style="width:90%;" placeholder="Enter your search passage" autofocus></textarea>
+        <button type="submit">Search</button>
+        <button type="button" id="resetButton">Reset</button>
+    </form>
+
+    <ul id="allLinks">
+        <li>CODE</li>
+        <li><a href="https://beta.character.ai/?q=" target="_blank">https://beta.character.ai/</a></li>
+        <li><a href="https://www.useblackbox.io/chat?q=" target="_blank">https://www.useblackbox.io/chat</a></li>
+        <li><a href="https://huggingface.co/spaces/codellama/codellama-13b-chat?q=" target="_blank">https://huggingface.co/spaces/codellama/codellama-13b-chat</a></li>
+        <li><a href="https://chatgpt.bestim.org/chat/?q=" target="_blank">https://chatgpt.bestim.org/chat/</a></li>
+        <li><a href="https://talkai.info/chat/?q=" target="_blank">https://talkai.info/chat/</a></li>
+        <li><a href="https://www.codeconvert.ai/free-converter?q=" target="_blank">https://www.codeconvert.ai/free-converter</a></li>
+        <li>SEARCH ENGINES</li>
+        <li class="mainSearch"><a href="https://www.askan.ai/?q=" target="_blank">https://www.askan.ai/</a></li>
+        <li class="mainSearch"><a href="https://gptgo.ai/" target="_blank">https://gptgo.ai/</a></li>
+        <li class="mainSearch"><a href="https://noowai.com/" target="_blank">https://noowai.com/</a></li>
+        <li class="mainSearch"><a href="https://hai.surf/?q=" target="_blank">https://hai.surf/</a></li>
+        <li class="mainSearch"><a href="https://komo.ai/?q=" target="_blank">https://komo.ai/</a></li>
+        <li class="mainSearch"><a href="https://iask.ai/?q=" target="_blank">https://iask.ai/</a></li>
+        <li class="mainSearch"><a href="https://www.ecosia.org/search?q=" target="_blank">https://www.ecosia.org/</a></li>
+        <li class="mainSearch"><a href="https://app.yoursearch.ai/?q=" target="_blank">https://app.yoursearch.ai/</a></li>
+        <li class="mainSearch"><a href="https://you.com/search?q=" target="_blank">https://you.com/</a></li>
+        <li class="mainSearch"><a href="https://andisearch.com/?q=" target="_blank">https://andisearch.com/</a></li>
+        <li class="mainSearch"><a href="https://www.perplexity.ai/?q=" target="_blank">https://www.perplexity.ai/</a></li>
+        <li class="mainSearch"><a href="https://www.phind.com/search?q=" target="_blank">https://www.phind.com/</a></li>
+        <li class="mainSearch"><a href="https://ewasion.github.io/opendirectory-finder/?q=" target="_blank">ewasion.github.io</a></li>
+        <li class="mainSearch"><a href="https://www.dogpile.com/serp?q=" target="_blank">dogpile</a></li>
+        <li class="mainSearch"><a href="https://yep.com/web?q=" target="_blank">yep</a></li>
+        <li class="mainSearch"><a href="https://duckduckgo.com/?q=" target="_blank">duckduckgo</a></li>
+        <li class="mainSearch"><a href="https://www.bing.com/search?q=" target="_blank">Bing</a></li>
+        <li class="mainSearch"><a href="https://search.yahoo.com/search?p=" target="_blank">Yahoo</a></li>
+        <li class="mainSearch"><a href="https://www.google.com/search?q=" target="_blank">Google</a></li>
+        <li>OTHERS</li>
+        <li><a href="https://www.futurepedia.io/?q=" target="_blank">https://www.futurepedia.io/</a></li>
+        <li><a href="https://www.futuretools.io/?q=" target="_blank">https://www.futuretools.io/</a></li>
+        <li><a href="https://www.futureailab.com/?q=" target="_blank">https://www.futureailab.com/</a></li>
+        <li><a href="https://poe.com/?q=" target="_blank">https://poe.com/</a></li>
+        <li><a href="https://www.forefront.ai/?q=" target="_blank">https://www.forefront.ai/</a></li>
+        <li><a href="https://ora.ai/electric-red-ydty/a-normal-bot?q=" target="_blank">https://ora.ai/electric-red-ydty/a-normal-bot</a></li>
+        <li><a href="https://rationale.jina.ai/?q=" target="_blank">https://rationale.jina.ai/</a></li>
+        <li><a href="https://www.inca.fm/?q=" target="_blank">https://www.inca.fm/</a></li>
+        <li><a href="https://www.desmos.com/calculator/zzxbryrahc" target="_blank">www.desmos.com/calculator/zzxbryrahc</a></li>
+    </ul>
+
+    <script>
+        // Add event listener to the form
+        document.getElementById('searchForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+            var query = document.getElementById('searchField').value;
+            var allLinks = document.getElementById('allLinks').getElementsByTagName('a');
+            // Redirect to the selected search engine's results page
+            for (var i = 0; i < allLinks.length; i++) {
+                allLinks[i].setAttribute('href', allLinks[i].getAttribute('href') + encodeURIComponent(query));
+            }
+        });
+
+        // Add event listener to the reset button
+        document.getElementById('resetButton').addEventListener('click', function () {
+            document.getElementById('searchField').value = ''; // Clear the search field
+            var allLinks = document.getElementById('allLinks').getElementsByTagName('a');
+            // Restore the original links of the search engines
+            for (var i = 0; i < allLinks.length; i++) {
+                allLinks[i].setAttribute('href', allLinks[i].getAttribute('href').replace(/[^?]+/, ''));
+            }
+        });
+
+        document.addEventListener('keydown', function (event) {
+            
+            if (event.ctrlKey && event.key === 'Enter') { // Check if Control + Enter is pressed
+                var submitButton = document.querySelector('button[type="submit"]'); // Find the submit button by its text or class/id
+                submitButton.click(); // Simulate a click on the submit button
+            }
+            if (event.ctrlKey && event.key === 'Shift') {
+                var resetButton = document.querySelector('button[type="button"]');
+                resetButton.click();
+                this.location.reload();
+            }
+            if (event.ctrlKey && (event.key.toLowerCase() === 'a')) {
+                var query = document.getElementById('searchField').value;
+                var mainSearchLinks = document.querySelectorAll('.mainSearch a');
+                mainSearchLinks.forEach(function (link) {
+                    window.open(link, '_blank');
+                });
+            }
+
+        });
+
+        document.querySelectorAll('ul').forEach(x => x.addEventListener('mouseout', function (e) {
+            if (e.target.tagName === 'A' && e.ctrlKey) {
+                e.preventDefault(); // Prevent the default action
+                window.open(e.target.href, '_blank'); // Open the link in a new tab
+            }
+        }));
+
+
+
+
+
+
+
+
+
+
+
+
+        // Assuming you have a function that extracts the query parameter from your local webpage URL
+        function getLocalWebpageQuery() {
+            // Example: Extracting the query parameter from a URL like "file:///D:/casual/others/search.html?q=example"
+            const url = window.location.href; // Get the current page URL
+            const queryString = new URLSearchParams(new URL(url).search); // Parse the query string
+            return queryString.get('q'); // Return the value of 'q'
+        }
+
+        // Function to construct the Google search URL with the extracted query
+        function constructCustomSearchURL(query) {
+            if (!query) {
+                console.error("No query found.");
+                return;
+            }
+                                        //IT SHOULD ONLY RETURN LIST OF URLS WITH QUERY
+                                        var mainSearchLinks2 = document.querySelectorAll('.mainSearch a');
+                                        mainSearchLinks2.forEach(function (link) {
+                                            var querySearchLink = link + encodeURIComponent(query);
+                                            window.open(querySearchLink, '_blank');
+                                        });
+            const googleSearchURL = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            return googleSearchURL;
+        }
+
+        // Main function to combine both steps
+        function performCustomSearchFromLocalPage() {
+            const localQuery = getLocalWebpageQuery();
+            const googleSearchURL = constructCustomSearchURL(localQuery);
+
+            if (googleSearchURL) {
+                window.open(googleSearchURL, '_blank'); // Open the constructed Google search URL in a new tab
+            } else {
+                console.log("Failed to construct Google search URL.");
+            }
+        }
+        performCustomSearchFromLocalPage(); // Call the main function
+
+
+    </script>
+</body>
+</html>
