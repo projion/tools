@@ -1,0 +1,55 @@
+
+                    @using (Html.BeginForm("UpdateProfile", "Profiles", FormMethod.Post))
+                    {
+                        <!-- Unique Modal Button -->
+                        <button onclick="openModal('@profile.ProfileId')">Open Modal</button>
+
+                        <!-- Dynamic Modal Content -->
+                        <div id="myModal_@profile.ProfileId" class="modal">
+                            <div class="modal-content">
+                                <span class="close" onclick="closeModal(@profile.ProfileId)">&times;</span>
+                                <form id="myForm_@profile.ProfileId" action="/submit_form" method="post">
+                                    <input type="hidden" name="ProfileId" value="@profile.ProfileId" required><br>
+                                    <label for="FirstName">FirstName:</label><br>
+                                    <input type="text" name="FirstName" value="@profile.FirstName" required><br>
+                                    <label for="password">Password:</label><br>
+                                    <input type="password" id="password" name="password" required><br>
+                                    <input type="submit" value="Submit">
+                                </form>
+                            </div>
+                        </div>
+                    }
+
+
+<!-- Modal Structure Moved Outside the Loop -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <form id="myForm" action="/submit_form" method="post">
+            <input type="hidden" name="ProfileId" required><br>
+
+            <label for="FirstName">FirstName:</label><br>
+            <input type="text" name="FirstName" required><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+
+<script>
+    // Function to open the modal
+    function openModal(profileId) {
+        var modal = document.getElementById('myModal_' + profileId);
+        modal.style.display = "block";
+    }
+
+    // Function to close the modal
+    function closeModal(profileId) {
+        var modal = document.getElementById('myModal_' + profileId);
+        modal.style.display = "none";
+    }
+
+</script>
