@@ -4,7 +4,16 @@
     <title>Search All</title>
 </head>
 <body>
-
+    <!--
+    => ctrl + mouseout on link = open that link
+    => ctrl + enter  = append textarea's text
+    => ctrl + a  = open all that holds commonClass class
+    => ctrl + q  = open all that holds generalSearch class
+    => ctrl + i  = open all that holds aiSearch class
+    => ctrl + shift  = this.location.reload();
+    => this url with queryString of q = search
+        codeSearch
+    -->
     <form id="searchForm">
         <!--<input type="text" id="searchField" placeholder="Enter your search query">-->
         <textarea id="searchField" style="width:90%;" placeholder="Enter your search passage" autofocus></textarea>
@@ -14,42 +23,49 @@
 
     <ul id="allLinks">
         <li>CODE</li>
-        <li><a href="https://beta.character.ai/?q=" target="_blank">https://beta.character.ai/</a></li>
-        <li><a href="https://www.useblackbox.io/chat?q=" target="_blank">https://www.useblackbox.io/chat</a></li>
-        <li><a href="https://huggingface.co/spaces/codellama/codellama-13b-chat?q=" target="_blank">https://huggingface.co/spaces/codellama/codellama-13b-chat</a></li>
-        <li><a href="https://chatgpt.bestim.org/chat/?q=" target="_blank">https://chatgpt.bestim.org/chat/</a></li>
-        <li><a href="https://talkai.info/chat/?q=" target="_blank">https://talkai.info/chat/</a></li>
-        <li><a href="https://www.codeconvert.ai/free-converter?q=" target="_blank">https://www.codeconvert.ai/free-converter</a></li>
+        <li class="commonClass"><a href="https://beta.character.ai/?q=" target="_blank">https://beta.character.ai/</a></li>
+        <li class="commonClass"><a href="https://www.useblackbox.io/chat?q=" target="_blank">https://www.useblackbox.io/chat</a></li>
+        <li class="commonClass"><a href="https://huggingface.co/spaces/codellama/codellama-13b-chat?q=" target="_blank">https://huggingface.co/spaces/codellama/codellama-13b-chat</a></li>
+        <li class="commonClass"><a href="https://chatgpt.bestim.org/chat/?q=" target="_blank">https://chatgpt.bestim.org/chat/</a></li>
+        <li class="commonClass"><a href="https://talkai.info/chat/?q=" target="_blank">https://talkai.info/chat/</a></li>
+        <li class="commonClass"><a href="https://anonchatgpt.com/?q=" target="_blank">https://anonchatgpt.com/</a></li>
+        <li class="commonClass"><a href="https://jeeves.ai/chat/" target="_blank">https://jeeves.ai/chat</a></li>
+        <li class="commonClass"><a href="https://bagoodex.io/search?id=" target="_blank">https://bagoodex.io/</a></li>
+        <li class="commonClass"><a href="https://www.codeconvert.ai/free-converter?q=" target="_blank">https://www.codeconvert.ai/free-converter</a></li>
         <li>SEARCH ENGINES</li>
-        <li class="mainSearch"><a href="https://www.askan.ai/?q=" target="_blank">https://www.askan.ai/</a></li>
-        <li class="mainSearch"><a href="https://gptgo.ai/" target="_blank">https://gptgo.ai/</a></li>
-        <li class="mainSearch"><a href="https://noowai.com/" target="_blank">https://noowai.com/</a></li>
-        <li class="mainSearch"><a href="https://hai.surf/?q=" target="_blank">https://hai.surf/</a></li>
-        <li class="mainSearch"><a href="https://komo.ai/?q=" target="_blank">https://komo.ai/</a></li>
-        <li class="mainSearch"><a href="https://iask.ai/?q=" target="_blank">https://iask.ai/</a></li>
-        <li class="mainSearch"><a href="https://www.ecosia.org/search?q=" target="_blank">https://www.ecosia.org/</a></li>
-        <li class="mainSearch"><a href="https://app.yoursearch.ai/?q=" target="_blank">https://app.yoursearch.ai/</a></li>
-        <li class="mainSearch"><a href="https://you.com/search?q=" target="_blank">https://you.com/</a></li>
-        <li class="mainSearch"><a href="https://andisearch.com/?q=" target="_blank">https://andisearch.com/</a></li>
-        <li class="mainSearch"><a href="https://www.perplexity.ai/?q=" target="_blank">https://www.perplexity.ai/</a></li>
-        <li class="mainSearch"><a href="https://www.phind.com/search?q=" target="_blank">https://www.phind.com/</a></li>
-        <li class="mainSearch"><a href="https://ewasion.github.io/opendirectory-finder/?q=" target="_blank">ewasion.github.io</a></li>
-        <li class="mainSearch"><a href="https://www.dogpile.com/serp?q=" target="_blank">dogpile</a></li>
-        <li class="mainSearch"><a href="https://yep.com/web?q=" target="_blank">yep</a></li>
-        <li class="mainSearch"><a href="https://duckduckgo.com/?q=" target="_blank">duckduckgo</a></li>
-        <li class="mainSearch"><a href="https://www.bing.com/search?q=" target="_blank">Bing</a></li>
-        <li class="mainSearch"><a href="https://search.yahoo.com/search?p=" target="_blank">Yahoo</a></li>
-        <li class="mainSearch"><a href="https://www.google.com/search?q=" target="_blank">Google</a></li>
+        <li class="commonClass"><a href="https://www.askan.ai/?q=" target="_blank">https://www.askan.ai/</a></li>
+        <li class="commonClass"><a href="https://gptgo.ai/" target="_blank">https://gptgo.ai/</a></li>
+        <li class="commonClass"><a href="https://noowai.com/" target="_blank">https://noowai.com/</a></li>
+        <li class="commonClass"><a href="https://hai.surf/?q=" target="_blank">https://hai.surf/</a></li>
+        <li class="commonClass generalSearch"><a href="https://komo.ai/?q=" target="_blank">https://komo.ai/</a></li>
+        <li class="commonClass aiSearch"><a href="https://www.waldo.fyi/app/search?q=" target="_blank">https://www.waldo.fyi/app/search</a></li>
+        <li class="commonClass generalSearch aiSearch"><a href="https://huggingface.co/spaces/Felladrin/MiniSearch?q=" target="_blank">https://huggingface.co/spaces/Felladrin/MiniSearch/</a></li>
+        <li class="commonClass generalSearch"><a href="https://www.hotbot.com/?q=" target="_blank">https://www.hotbot.com//</a></li>
+        <li class="commonClass generalSearch"><a href="https://iask.ai/?q=" target="_blank">https://iask.ai/</a></li>
+        <li class="commonClass generalSearch"><a href="https://www.ecosia.org/search?q=" target="_blank">https://www.ecosia.org/</a></li>
+        <li class="commonClass generalSearch"><a href="https://app.yoursearch.ai/?q=" target="_blank">https://app.yoursearch.ai/</a></li>
+        <li class="commonClass generalSearch"><a href="https://you.com/search?q=" target="_blank">https://you.com/</a></li>
+        <li class="commonClass generalSearch"><a href="https://andisearch.com/?q=" target="_blank">https://andisearch.com/</a></li>
+        <li class="commonClass generalSearch aiSearch"><a href="https://www.perplexity.ai/?q=" target="_blank">https://www.perplexity.ai/</a></li>
+        <li class="commonClass generalSearch aiSearch"><a href="https://www.phind.com/search?q=" target="_blank">https://www.phind.com/</a></li>
+        <li class="commonClass"><a href="https://ewasion.github.io/opendirectory-finder/?q=" target="_blank">ewasion.github.io</a></li>
+        <li class="commonClass"><a href="https://www.dogpile.com/serp?q=" target="_blank">dogpile</a></li>
+        <li class="commonClass generalSearch"><a href="https://yep.com/web?q=" target="_blank">yep</a></li>
+        <li class="commonClass generalSearch"><a href="https://duckduckgo.com/?q=" target="_blank">duckduckgo</a></li>
+        <li class="commonClass generalSearch"><a href="https://www.bing.com/search?q=" target="_blank">Bing</a></li>
+        <li class="commonClass generalSearch"><a href="https://search.yahoo.com/search?p=" target="_blank">Yahoo</a></li>
+        <li class="commonClass generalSearch"><a href="https://www.google.com/search?q=" target="_blank">Google</a></li>
         <li>OTHERS</li>
-        <li><a href="https://www.futurepedia.io/?q=" target="_blank">https://www.futurepedia.io/</a></li>
-        <li><a href="https://www.futuretools.io/?q=" target="_blank">https://www.futuretools.io/</a></li>
-        <li><a href="https://www.futureailab.com/?q=" target="_blank">https://www.futureailab.com/</a></li>
-        <li><a href="https://poe.com/?q=" target="_blank">https://poe.com/</a></li>
-        <li><a href="https://www.forefront.ai/?q=" target="_blank">https://www.forefront.ai/</a></li>
-        <li><a href="https://ora.ai/electric-red-ydty/a-normal-bot?q=" target="_blank">https://ora.ai/electric-red-ydty/a-normal-bot</a></li>
-        <li><a href="https://rationale.jina.ai/?q=" target="_blank">https://rationale.jina.ai/</a></li>
-        <li><a href="https://www.inca.fm/?q=" target="_blank">https://www.inca.fm/</a></li>
-        <li><a href="https://www.desmos.com/calculator/zzxbryrahc" target="_blank">www.desmos.com/calculator/zzxbryrahc</a></li>
+        <li class="commonClass"><a href="https://www.futurepedia.io/?q=" target="_blank">https://www.futurepedia.io/</a></li>
+        <li class="commonClass"><a href="https://www.futuretools.io/?q=" target="_blank">https://www.futuretools.io/</a></li>
+        <li class="commonClass"><a href="https://www.futureailab.com/?q=" target="_blank">https://www.futureailab.com/</a></li>
+        <li class="commonClass"><a href="https://poe.com/?q=" target="_blank">https://poe.com/</a></li>
+        <li class="commonClass"><a href="https://www.forefront.ai/?q=" target="_blank">https://www.forefront.ai/</a></li>
+        <li class="commonClass"><a href="https://ora.ai/electric-red-ydty/a-normal-bot?q=" target="_blank">https://ora.ai/electric-red-ydty/a-normal-bot</a></li>
+        <li class="commonClass"><a href="https://rationale.jina.ai/?q=" target="_blank">https://rationale.jina.ai/</a></li>
+        <li class="commonClass"><a href="https://www.inca.fm/?q=" target="_blank">https://www.inca.fm/</a></li>
+        <li class="commonClass"><a href="https://www.vecteezy.com/reverse-image-search" target="_blank">https://www.vecteezy.com/reverse-image-search</a></li>
+        <li class="commonClass"><a href="https://www.desmos.com/calculator/zzxbryrahc" target="_blank">www.desmos.com/calculator/zzxbryrahc</a></li>
     </ul>
 
     <script>
@@ -64,18 +80,17 @@
             }
         });
 
-        // Add event listener to the reset button
-        document.getElementById('resetButton').addEventListener('click', function () {
+        
+        document.getElementById('resetButton').addEventListener('click', function () {  // Add event listener to the reset button
             document.getElementById('searchField').value = ''; // Clear the search field
             var allLinks = document.getElementById('allLinks').getElementsByTagName('a');
-            // Restore the original links of the search engines
-            for (var i = 0; i < allLinks.length; i++) {
+            for (var i = 0; i < allLinks.length; i++) { // Restore the original links of the search engines
                 allLinks[i].setAttribute('href', allLinks[i].getAttribute('href').replace(/[^?]+/, ''));
             }
         });
 
         document.addEventListener('keydown', function (event) {
-            
+
             if (event.ctrlKey && event.key === 'Enter') { // Check if Control + Enter is pressed
                 var submitButton = document.querySelector('button[type="submit"]'); // Find the submit button by its text or class/id
                 submitButton.click(); // Simulate a click on the submit button
@@ -87,18 +102,27 @@
             }
             if (event.ctrlKey && (event.key.toLowerCase() === 'a')) {
                 var query = document.getElementById('searchField').value;
-                var mainSearchLinks = document.querySelectorAll('.mainSearch a');
-                mainSearchLinks.forEach(function (link) {
-                    window.open(link, '_blank');
-                });
+                var commonClassLinks = document.querySelectorAll('.commonClass a');
+                openNewTabs(commonClassLinks);
             }
-
+            if (event.ctrlKey && (event.key.toLowerCase() === 'q')) {
+                var query = document.getElementById('searchField').value;
+                var generalSearchLinks = document.querySelectorAll('.generalSearch a');
+                openNewTabs(generalSearchLinks);
+            }
+            if (event.ctrlKey && (event.key.toLowerCase() === 'i')) {
+                var query = document.getElementById('searchField').value;
+                var aiSearchLinks = document.querySelectorAll('.aiSearch a');
+                openNewTabs(aiSearchLinks);
+            }
         });
 
         document.querySelectorAll('ul').forEach(x => x.addEventListener('mouseout', function (e) {
             if (e.target.tagName === 'A' && e.ctrlKey) {
                 e.preventDefault(); // Prevent the default action
-                window.open(e.target.href, '_blank'); // Open the link in a new tab
+                setTimeout(() => { // Wait for 300ms before executing the following code
+                    openNewTabs(e.target.href); // Call openNewTabs after the delay
+                }, 300); // Delay in milliseconds
             }
         }));
 
@@ -118,6 +142,7 @@
             // Example: Extracting the query parameter from a URL like "file:///D:/casual/others/search.html?q=example"
             const url = window.location.href; // Get the current page URL
             const queryString = new URLSearchParams(new URL(url).search); // Parse the query string
+            //console.log(queryString.toString());
             return queryString.get('q'); // Return the value of 'q'
         }
 
@@ -127,26 +152,43 @@
                 console.error("No query found.");
                 return;
             }
-                                        //IT SHOULD ONLY RETURN LIST OF URLS WITH QUERY
-                                        var mainSearchLinks2 = document.querySelectorAll('.mainSearch a');
-                                        mainSearchLinks2.forEach(function (link) {
-                                            var querySearchLink = link + encodeURIComponent(query);
-                                            window.open(querySearchLink, '_blank');
-                                        });
-            const googleSearchURL = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-            return googleSearchURL;
+            var modifiedLinksArray = [];
+            var commonClassLinks2 = document.querySelectorAll('.commonClass a');
+            commonClassLinks2.forEach(function (link) {
+                var querySearchLink = link + encodeURIComponent(query);
+                modifiedLinksArray.push(querySearchLink);
+                //window.open(querySearchLink, '_blank');
+            });
+            //const googleSearchURL = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            //modifiedLinksArray.push(googleSearchURL);
+
+
+            return modifiedLinksArray;
+            //return googleSearchURL;
         }
 
+
+        function openNewTabs(urls) {
+            if (typeof urls === 'string') {
+                urls = [urls]; // Convert the single URL string to an array
+            }
+
+            urls.forEach(function (link) {
+                if (link) {
+                    window.open(link, '_blank');
+                } else {
+                    console.log("Failed to construct Google search URL.");
+                }
+            });
+        }
         // Main function to combine both steps
         function performCustomSearchFromLocalPage() {
             const localQuery = getLocalWebpageQuery();
-            const googleSearchURL = constructCustomSearchURL(localQuery);
-
-            if (googleSearchURL) {
-                window.open(googleSearchURL, '_blank'); // Open the constructed Google search URL in a new tab
-            } else {
-                console.log("Failed to construct Google search URL.");
-            }
+            //const googleSearchURL = constructCustomSearchURL(localQuery);
+            var urls = constructCustomSearchURL(localQuery);
+            //var urls2 = constructCustomSearchURL(localQuery);
+            //urls.push(...urls2);
+            openNewTabs(urls);
         }
         performCustomSearchFromLocalPage(); // Call the main function
 
