@@ -28,7 +28,11 @@
             <div>CODE</div>
             <ul id="allLinks">
                 <li class="commonClass"><a href="https://beta.character.ai/?q=" target="_blank">https://beta.character.ai/</a></li>
+                <li class="commonClass"><a href="https://zzzcode.ai/=" target="_blank">https://zzzcode.ai/</a></li>
+                <li class="commonClass"><a href="https://labs.perplexity.ai/" target="_blank">https://labs.perplexity.ai/</a></li>
                 <li class="commonClass codeSearch"><a href="https://www.blackbox.ai/?q=" target="_blank">https://www.blackbox.ai/</a></li>
+                <li class="commonClass codeSearch"><a href="https://sdk.vercel.ai/playground?q=" target="_blank">https://sdk.vercel.ai/playground</a></li>
+                <li class="commonClass codeSearch"><a href="https://chatgpt.com/?q=" target="_blank">https://chatgpt.com/</a></li>
                 <li class="commonClass"><a href="https://huggingface.co/spaces/codellama/codellama-13b-chat?q=" target="_blank">https://huggingface.co/spaces/codellama/codellama-13b-chat</a></li>
                 <li class="commonClass"><a href="https://chatgpt.bestim.org/chat/?q=" target="_blank">https://chatgpt.bestim.org/chat/</a></li>
                 <li class="commonClass"><a href="https://talkai.info/chat/?q=" target="_blank">https://talkai.info/chat/</a></li>
@@ -42,8 +46,9 @@
             <div>SEARCH ENGINES</div>
             <ul id="allLinks">
                 <li class="commonClass invisible"><a href="https://www.askan.ai/?q=" target="_blank">https://www.askan.ai/</a></li>
+                <li class="commonClass invisible"><a href="https://noowai.com/" target="_blank">https://noowai.com/</a></li>
+                <li class="commonClass invisible"><a href="https://app.txyz.ai" target="_blank">https://app.txyz.ai</a></li>
                 <li class="commonClass"><a href="https://gptgo.ai/" target="_blank">https://gptgo.ai/</a></li>
-                <li class="commonClass"><a href="https://noowai.com/" target="_blank">https://noowai.com/</a></li>
                 <li class="commonClass"><a href="https://hai.surf/?q=" target="_blank">https://hai.surf/</a></li>
                 <li class="commonClass generalSearch"><a href="https://komo.ai/?q=" target="_blank">https://komo.ai/</a></li>
                 <li class="commonClass generalSearch aiSearch"><a href="https://www.waldo.fyi/app/search?q=" target="_blank">https://www.waldo.fyi/app/search</a></li>
@@ -94,11 +99,8 @@
             event.preventDefault(); // Prevent form submission
             var query = document.getElementById('searchField').value;
             var allLinks = document.querySelectorAll('#allLinks li a'); //var allLinks = document.getElementById('allLinks').getElementsByTagName('a');
-            // Redirect to the selected search engine's results page
-            for (var i = 0; i < allLinks.length; i++) {
-                //console.log(allLinks[i].getAttribute('href'));
+            for (var i = 0; i < allLinks.length; i++)   // Redirect to the selected search engine's results page
                 allLinks[i].setAttribute('href', allLinks[i].getAttribute('href') + encodeURIComponent(query));
-            }
         });
 
         document.querySelectorAll('.invisible').forEach(e => e.style.display = 'none');
@@ -106,9 +108,8 @@
         document.getElementById('resetButton').addEventListener('click', function () {  // Add event listener to the reset button
             document.getElementById('searchField').value = ''; // Clear the search field
             var allLinks = document.getElementById('allLinks').getElementsByTagName('a');
-            for (var i = 0; i < allLinks.length; i++) { // Restore the original links of the search engines
+            for (var i = 0; i < allLinks.length; i++)  // Restore the original links of the search engines
                 allLinks[i].setAttribute('href', allLinks[i].getAttribute('href').replace(/[^?]+/, ''));
-            }
         });
 
         document.addEventListener('keydown', function (event) {
@@ -117,19 +118,19 @@
                 var submitButton = document.querySelector('button[type="submit"]'); // Find the submit button by its text or class/id
                 submitButton.click(); // Simulate a click on the submit button
             }
-            if (event.ctrlKey && event.key === 'Shift') {
-                document.querySelector('button[type="button"]').click();
-                this.location.href = this.location.pathname;
-                //this.location.reload();
-            }
+            if (event.ctrlKey && event.key === 'Shift') 
+                document.querySelector('button[type="button"]').click(), this.location.href = this.location.pathname;//this.location.reload();
             if (event.ctrlKey && (event.key.toLowerCase() === '.'))
                 (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.commonClass a')));
             if (event.ctrlKey && (event.key.toLowerCase() === 'q'))
                 (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.generalSearch a')));
-            if (event.ctrlKey && (event.key.toLowerCase() === ' ')) 
+            if (event.ctrlKey && (event.key.toLowerCase() === ' '))
                 (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.codeSearch a')));
             if (event.ctrlKey && (event.key.toLowerCase() === 'i'))
                 (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.aiSearch a')));
+            if (event.ctrlKey && (event.key.toLowerCase() === 'c')) //copy
+                copyTextToClipboard(document.getElementById('searchField').value), document.getElementById('searchField').select();
+            
         });
 
         document.querySelectorAll('ul').forEach(x => x.addEventListener('mouseout', function (e) {
@@ -157,55 +158,76 @@
             // Example: Extracting the query parameter from a URL like "file:///D:/casual/others/search.html?q=example"
             const url = window.location.href; // Get the current page URL
             const queryString = new URLSearchParams(new URL(url).search); // Parse the query string
-            //console.log(queryString.toString());
             return queryString.get('q'); // Return the value of 'q'
         }
 
-        // Function to construct the Custom search URL with the extracted query
-        function constructCustomSearchURL(query) {
+        function constructCustomSearchURL(query) {  // Function to construct the Custom search URL with the extracted query
             if (!query) {
                 console.error("No query found.");
                 return;
             }
             var modifiedLinksArray = [];
-            var commonClassLinks2 = document.querySelectorAll('.querySearch a');
-            commonClassLinks2.forEach(function (link) {
+            var commonClassLinks = document.querySelectorAll('.querySearch a');
+            commonClassLinks.forEach(function (link) {
                 var querySearchLink = link + encodeURIComponent(query);
                 modifiedLinksArray.push(querySearchLink);
-                //window.open(querySearchLink, '_blank');
             });
             //const googleSearchURL = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
             //modifiedLinksArray.push(googleSearchURL);
-
-
-            return modifiedLinksArray;
             //return googleSearchURL;
+            return modifiedLinksArray;
         }
-
 
         function openNewTabs(urls) {
-            if (typeof urls === 'string') {
+            if (typeof urls === 'string') 
                 urls = [urls]; // Convert the single URL string to an array
-            }
-
             urls.forEach(function (link) {
-                if (link) {
+                if (link)
                     window.open(link, '_blank');
-                } else {
+                else 
                     console.log("Failed to construct Google search URL.");
-                }
             });
         }
-        // Main function to combine both steps
-        function performCustomSearchFromLocalPage() {
-            const localQuery = getLocalWebpageQuery();
-            //const googleSearchURL = constructCustomSearchURL(localQuery);
-            var urls = constructCustomSearchURL(localQuery);
-            //var urls2 = constructCustomSearchURL(localQuery);
-            //urls.push(...urls2);
-            openNewTabs(urls);
+        function performCustomSearchFromLocalPageQuery() {
+            openNewTabs(constructCustomSearchURL(getLocalWebpageQuery()));
         }
-        performCustomSearchFromLocalPage(); // Call the main function
+        performCustomSearchFromLocalPageQuery();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function copyTextToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    console.log("Text copied to clipboard");
+                }).catch(err => {
+                    console.error("Could not copy text: ", err);
+                });
+            } else {    // Fallback for older browsers
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    console.log("Text copied to clipboard");
+                } catch (err) {
+                    console.error("Could not copy text: ", err);
+                }
+                document.body.removeChild(textArea);
+            }
+        }
+
 
 
     </script>
