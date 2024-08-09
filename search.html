@@ -7,7 +7,7 @@
     <!--
     => ctrl + .  = open all that holds commonClass class
     => ctrl + " "  = open all that holds codeSearch class
-    => ctrl + i  = open all that holds aiSearch class
+    => ctrl + z  = open all that holds aiSearch class
     => ctrl + mouseout on link = open that link
     => ctrl + enter  = append textarea's text
     => ctrl + q  = open all that holds generalSearch class
@@ -118,7 +118,7 @@
                 var submitButton = document.querySelector('button[type="submit"]'); // Find the submit button by its text or class/id
                 submitButton.click(); // Simulate a click on the submit button
             }
-            if (event.ctrlKey && event.key === 'Shift') 
+            if (event.ctrlKey && event.key === 'Shift')
                 document.querySelector('button[type="button"]').click(), this.location.href = this.location.pathname;//this.location.reload();
             if (event.ctrlKey && (event.key.toLowerCase() === '.'))
                 (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.commonClass a')));
@@ -126,11 +126,10 @@
                 (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.generalSearch a')));
             if (event.ctrlKey && (event.key.toLowerCase() === ' '))
                 (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.codeSearch a')));
-            if (event.ctrlKey && (event.key.toLowerCase() === 'i'))
+            if (event.ctrlKey && (event.key.toLowerCase() === 'z'))
                 (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.aiSearch a')));
             if (event.ctrlKey && (event.key.toLowerCase() === 'c')) //copy
                 copyTextToClipboard(document.getElementById('searchField').value), document.getElementById('searchField').select();
-            
         });
 
         document.querySelectorAll('ul').forEach(x => x.addEventListener('mouseout', function (e) {
@@ -167,24 +166,22 @@
                 return;
             }
             var modifiedLinksArray = [];
-            var commonClassLinks = document.querySelectorAll('.querySearch a');
-            commonClassLinks.forEach(function (link) {
-                var querySearchLink = link + encodeURIComponent(query);
+            document.querySelectorAll('.querySearch a').forEach(function (link) {
+                var querySearchLink = link + encodeURIComponent(query); //const googleSearchURL = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
                 modifiedLinksArray.push(querySearchLink);
             });
-            //const googleSearchURL = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-            //modifiedLinksArray.push(googleSearchURL);
-            //return googleSearchURL;
             return modifiedLinksArray;
         }
 
         function openNewTabs(urls) {
-            if (typeof urls === 'string') 
+            if (urls == null)
+                return;
+            else if (typeof urls === 'string')
                 urls = [urls]; // Convert the single URL string to an array
             urls.forEach(function (link) {
                 if (link)
                     window.open(link, '_blank');
-                else 
+                else
                     console.log("Failed to construct Google search URL.");
             });
         }
