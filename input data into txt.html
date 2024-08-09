@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Text to File</title>
+</head>
+<body>
+    <h1>Save Text to File</h1>
+    <form id="textForm">
+        <label for="textInput">Enter text:</label>
+        <!--<input type="text" id="textInput" name="textInput" required>-->
+        <textarea id="textInput" name="textInput" style="width:80%;" placeholder="Enter something to download as txt" autofocus=""></textarea>
+        <button type="button" onclick="saveTextToFile()">Save to File</button>
+    </form>
+
+    <script>
+        function saveTextToFile() {
+            const textInput = document.getElementById('textInput').value;
+            if (textInput.trim() === '') {
+                alert('Please enter some text.');
+                return;
+            }
+
+            // Create a Blob with the text content
+            const blob = new Blob([textInput], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+
+            // Create a temporary link element
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'data.txt'; // The name of the file to be saved
+
+            // Append the link to the body
+            document.body.appendChild(a);
+
+            // Trigger a click on the link to start the download
+            a.click();
+
+            // Clean up by removing the link and revoking the object URL
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            // Clear the input field
+            document.getElementById('textInput').value = '';
+        }
+    </script>
+</body>
+</html>
