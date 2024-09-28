@@ -19,7 +19,9 @@
         aiSearch
         querySearch
         reRearch
-        invisible
+        invisible      ---not applied to anywhere, but works
+        imageSearch
+        textCompare
     -->
     <form id="searchForm">
         <!--<input type="text" id="searchField" placeholder="Enter your search query">-->
@@ -50,9 +52,9 @@
         <div>
             <div>SEARCH ENGINES</div>
             <ul id="allLinks">
-                <li class="commonClass invisible"><a href="https://www.askan.ai/?q=" target="_blank">https://www.askan.ai/</a></li>
-                <li class="commonClass invisible"><a href="https://noowai.com/" target="_blank">https://noowai.com/</a></li>
-                <li class="commonClass invisible"><a href="https://app.txyz.ai" target="_blank">https://app.txyz.ai</a></li>
+                <li class="commonClass "><a href="https://www.askan.ai/?q=" target="_blank">https://www.askan.ai/</a></li>
+                <li class="commonClass "><a href="https://noowai.com/" target="_blank">https://noowai.com/</a></li>
+                <li class="commonClass "><a href="https://app.txyz.ai" target="_blank">https://app.txyz.ai</a></li>
                 <li class="commonClass"><a href="https://gptgo.ai/" target="_blank">https://gptgo.ai/</a></li>
                 <li class="commonClass"><a href="https://hai.surf/?q=" target="_blank">https://hai.surf/</a></li>
                 <li class="commonClass generalSearch"><a href="https://komo.ai/?q=" target="_blank">https://komo.ai/</a></li>
@@ -89,7 +91,7 @@
                 <li class="commonClass"><a href="https://www.inca.fm/?q=" target="_blank">https://www.inca.fm/</a></li>
                 <li class="commonClass imageSearch"><a href="https://www.duplichecker.com/reverse-image-search.php" target="_blank">https://www.duplichecker.com/reverse-image-search.php</a></li>
                 <li class="commonClass imageSearch"><a href="https://www.vecteezy.com/reverse-image-search" target="_blank">https://www.vecteezy.com/reverse-image-search</a></li>
-                <li class="commonClass #textCompare"><a href="https://www.diffchecker.com/text-compare/" target="_blank">https://www.diffchecker.com/text-compare/</a></li>
+                <li class="commonClass textCompare"><a href="https://www.diffchecker.com/text-compare/" target="_blank">https://www.diffchecker.com/text-compare/</a></li>
                 <li class="commonClass"><a href="https://www.desmos.com/calculator/zzxbryrahc" target="_blank">https://www.desmos.com/calculator/zzxbryrahc</a></li>
             </ul>
         </div>
@@ -105,10 +107,10 @@
     <script>
         document.getElementById('searchForm').addEventListener('submit', function (event) { // Add event listener to the form
             event.preventDefault(); // Prevent form submission
-            var query = document.getElementById('searchField').value;
+            var enteredSearchQuery = document.getElementById('searchField').value;
             var allLinks = document.querySelectorAll('#allLinks li a'); //var allLinks = document.getElementById('allLinks').getElementsByTagName('a');
             for (var i = 0; i < allLinks.length; i++)   // Redirect to the selected search engine's results page
-                allLinks[i].setAttribute('href', allLinks[i].getAttribute('href') + encodeURIComponent(query));
+                allLinks[i].setAttribute('href', allLinks[i].getAttribute('href') + encodeURIComponent(enteredSearchQuery));
         });
 
         document.querySelectorAll('.invisible').forEach(e => e.style.display = 'none');
@@ -127,7 +129,8 @@
                 submitButton.click(); // Simulate a click on the submit button
             }
             if (event.ctrlKey && event.key === 'Shift')
-                document.querySelector('button[type="button"]').click(), this.location.href = this.location.pathname;//this.location.reload();
+                this.location.href = this.location.pathname;
+                //document.querySelector('button[type="button"]').click(), this.location.href = this.location.pathname;//this.location.reload();
             if (event.ctrlKey && (event.key.toLowerCase() === '.'))
                 (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.commonClass a')));
             if (event.ctrlKey && (event.key.toLowerCase() === 'q'))
