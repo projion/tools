@@ -22,6 +22,8 @@
         invisible      ---not applied to anywhere, but works
         imageSearch
         textCompare
+        textConvertCase
+        textReplace
     -->
     <form id="searchForm">
         <!--<input type="text" id="searchField" placeholder="Enter your search query">-->
@@ -89,18 +91,26 @@
                 <li class="commonClass"><a href="https://ora.ai/electric-red-ydty/a-normal-bot?q=" target="_blank">https://ora.ai/electric-red-ydty/a-normal-bot</a></li>
                 <li class="commonClass"><a href="https://rationale.jina.ai/?q=" target="_blank">https://rationale.jina.ai/</a></li>
                 <li class="commonClass"><a href="https://www.inca.fm/?q=" target="_blank">https://www.inca.fm/</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>TOOLS</div>
+            <ul id="allLinks">
                 <li class="commonClass imageSearch"><a href="https://www.duplichecker.com/reverse-image-search.php" target="_blank">https://www.duplichecker.com/reverse-image-search.php</a></li>
                 <li class="commonClass imageSearch"><a href="https://www.vecteezy.com/reverse-image-search" target="_blank">https://www.vecteezy.com/reverse-image-search</a></li>
                 <li class="commonClass textCompare"><a href="https://www.diffchecker.com/text-compare/" target="_blank">https://www.diffchecker.com/text-compare/</a></li>
+                <li class="commonClass textConvertCase"><a href="https://convertcase.net/" target="_blank">https://convertcase.net/</a></li>
+                <li class="commonClass textReplace"><a href="https://convertcase.net/replace-text/" target="_blank">https://convertcase.net/replace-text/</a></li>
                 <li class="commonClass"><a href="https://www.desmos.com/calculator/zzxbryrahc" target="_blank">https://www.desmos.com/calculator/zzxbryrahc</a></li>
             </ul>
         </div>
+
     </div>
     <style>
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px; /* Optional: Adds some space between the columns */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px; /* Optional: Adds some space between the columns */
         }
     </style>
 
@@ -130,7 +140,7 @@
             }
             if (event.ctrlKey && event.key === 'Shift')
                 this.location.href = this.location.pathname;
-                //document.querySelector('button[type="button"]').click(), this.location.href = this.location.pathname;//this.location.reload();
+            //document.querySelector('button[type="button"]').click(), this.location.href = this.location.pathname;//this.location.reload();
             if (event.ctrlKey && (event.key.toLowerCase() === '.'))
                 (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.commonClass a')));
             if (event.ctrlKey && (event.key.toLowerCase() === 'q'))
