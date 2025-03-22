@@ -225,8 +225,8 @@
         function getLocalWebpageQuery() {   // Assuming you have a function that extracts the query parameter from your local webpage URL
             // Example: Extracting the query parameter from a URL like "file:///D:/casual/others/search.html?q=example"
             const url = window.location.href; // Get the current page URL
-            var queryString = new URLSearchParams(new URL(url).search).toString() == "" ? null : '?' + new URLSearchParams(new URL(url).search).toString();
-            return queryString;
+            var queryValue = new URLSearchParams(new URL(url).search).toString() == "" ? null : (new URL(url).searchParams.get('q')).toString();
+            return queryValue;
         }
 
         function constructCustomSearchURL(query) {  // Function to construct the Custom search URL with the extracted query
