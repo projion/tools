@@ -5,27 +5,27 @@
 </head>
 <body>
     <!--
-    => ctrl + .  = open all that holds commonClass class
-    => ctrl + " "  = open all that holds codeSearch class
-    => ctrl + shift + " "  = open all that holds codeWindow class
-    => ctrl + z  = open all that holds aiSearch class
     => ctrl + mouseout on link = open that link
     => ctrl + enter  = append textarea's text
-    => ctrl + q  = open all that holds generalSearch class
+    => ctrl + .  = open all that holds commonClass class
+    => ctrl + " "  = open all that holds avgStudy class
+    => ctrl + altr + " "  = open all that holds fullStudy class
+    => ctrl + q  = open all that holds searchEngine class
+    => ctrl + altr + q  = open all that holds avgSearchEngine class
     => ctrl + shift  = this.location.reload();
+                => ctrl + z
     => this url with queryString of q = search
-        generalSearch
+        searchEngine
         commonClass
-        codeSearch
-        codeWindow
-        aiSearch
+        avgStudy
+        fullStudy
         querySearch
-        reRearch
-        invisible      ---not applied to anywhere, but works
-        imageSearch
-        textCompare
-        textConvertCase
-        textReplace
+            reRearch
+            invisible      ---not applied to anywhere, but works
+            imageSearch
+            textCompare
+            textConvertCase
+            textReplace
         C:\Windows\System32\cmd.exe /k start "" "C:\Program Files\Mozilla Firefox\firefox.exe" -private-window https://projion.github.io/tools/search.html & exit
     -->
     <form id="searchForm">
@@ -39,58 +39,60 @@
         <div>
             <div>CODE</div>
             <ul id="allLinks">
-                <li class="commonClass codeWindow"><a href="https://duck.ai/" target="_blank">https://duck.ai/</a></li>
-                <li class="commonClass codeSearch codeWindow"><a href="https://copilot.microsoft.com/?q=" target="_blank">https://copilot.microsoft.com/</a></li>
-                <li class="commonClass"><a href="https://labs.perplexity.ai/" target="_blank">https://labs.perplexity.ai/</a></li>
-                <li class="commonClass codeSearch codeWindow"><a href="https://www.blackbox.ai/?q=" target="_blank">https://www.blackbox.ai/</a></li>
-                <li class="commonClass codeSearch codeWindow"><a href="https://chatgpt.com/?q=" target="_blank">https://chatgpt.com/</a></li>
-                <li class="commonClass codeSearch codeWindow"><a href="https://chat.mistral.ai/chat?q=" target="_blank">https://chat.mistral.ai/chat</a></li>
-                <li class="commonClass"><a href="https://playground.allenai.org/?q=" target="_blank">https://playground.allenai.org/</a></li>
-                <li class="commonClass codeWindow"><a href="https://chat.qwen.ai/?q=" target="_blank">https://chat.qwen.ai/</a></li>
-                <li class="commonClass codeWindow"><a href="https://chat.deepseek.com/?q=" target="_blank">https://chat.deepseek.com/</a></li>
-                <li class="commonClass codeWindow"><a href="https://grok.com/?q=" target="_blank">https://grok.com/</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://duck.ai/" target="_blank">https://duck.ai/</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://chat.qwen.ai/?q=" target="_blank">https://chat.qwen.ai/</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://chat.deepseek.com/?q=" target="_blank">https://chat.deepseek.com/</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://copilot.microsoft.com/?q=" target="_blank">https://copilot.microsoft.com/</a></li>
+                <li class="commonClass aiModel"><a href="https://labs.perplexity.ai/" target="_blank">https://labs.perplexity.ai/</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://www.blackbox.ai/?q=" target="_blank">https://www.blackbox.ai/</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://chatgpt.com/?q=" target="_blank">https://chatgpt.com/</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://chat.mistral.ai/chat?q=" target="_blank">https://chat.mistral.ai/chat</a></li>
+                <li class="commonClass aiModel"><a href="https://playground.allenai.org/?q=" target="_blank">https://playground.allenai.org/</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://grok.com/?q=" target="_blank">https://grok.com/</a></li>
                 <li class="commonClass"><a href="https://www.codeconvert.ai/free-converter?q=" target="_blank">https://www.codeconvert.ai/free-converter</a></li>
                 <li class="commonClass"><a href="https://zzzcode.ai/?q=" target="_blank">https://zzzcode.ai/</a></li>
-                <li class="commonClass"><a href="https://sdk.vercel.ai/playground?q=" target="_blank">https://sdk.vercel.ai/playground</a></li>
-                <li class="commonClass"><a href="https://chatgpt.bestim.org/chat/?q=" target="_blank">https://chatgpt.bestim.org/chat/</a></li>
-                <li class="commonClass"><a href="https://talkai.info/chat/?q=" target="_blank">https://talkai.info/chat/</a></li>
-                <li class="commonClass"><a href="https://anonchatgpt.com/?q=" target="_blank">https://anonchatgpt.com/</a></li>
-                <li class="commonClass"><a href="https://jeeves.ai/chat/?q=" target="_blank">https://jeeves.ai/chat</a></li>
-                <li class="commonClass"><a href="https://bagoodex.io/search?q=" target="_blank">https://bagoodex.io/</a></li>
+                <li class="commonClass aiModel"><a href="https://sdk.vercel.ai/playground?q=" target="_blank">https://sdk.vercel.ai/playground</a></li>
+                <li class="commonClass aiModel"><a href="https://chatgpt.bestim.org/chat/?q=" target="_blank">https://chatgpt.bestim.org/chat/</a></li>
+                <li class="commonClass aiModel"><a href="https://talkai.info/chat/?q=" target="_blank">https://talkai.info/chat/</a></li>
+                <li class="commonClass aiModel"><a href="https://anonchatgpt.com/?q=" target="_blank">https://anonchatgpt.com/</a></li>
+                <li class="commonClass aiModel"><a href="https://jeeves.ai/chat/?text=" target="_blank">https://jeeves.ai/chat</a></li>
+                <li class="commonClass searchEngine aiModel"><a href="https://bagoodex.io/search?q=" target="_blank">https://bagoodex.io/</a></li>
                 <li class="commonClass"><a href="https://beta.character.ai/?q=" target="_blank">https://beta.character.ai/</a></li>
-                <li class="commonClass"><a href="https://www.chatplayground.ai/?q=" target="_blank">https://www.chatplayground.ai/</a></li>
+                <li class="commonClass aiModel"><a href="https://www.chatplayground.ai/?q=" target="_blank">https://www.chatplayground.ai/</a></li>
             </ul>
         </div>
         <div>
             <div>SEARCH ENGINES</div>
             <ul id="allLinks">
-                <li class="commonClass generalSearch querySearch codeSearch codeWindow aiSearch"><a href="https://www.perplexity.ai/?q=" target="_blank">https://www.perplexity.ai/</a></li>
-                <li class="commonClass generalSearch querySearch codeSearch codeWindow aiSearch"><a href="https://www.phind.com/search/?q=" target="_blank">https://www.phind.com/</a></li>
-                <li class="commonClass generalSearch"><a href="https://komo.ai/" target="_blank">https://komo.ai/</a></li>
-                <li class="commonClass generalSearch codeWindow"><a href="https://you.com/search?q=" target="_blank">https://you.com/</a></li>
-                <li class="commonClass generalSearch"><a href="https://andisearch.com/?q=" target="_blank">https://andisearch.com/</a></li>
-                <li class="commonClass generalSearch aiSearch"><a href="https://huggingface.co/spaces/Felladrin/MiniSearch/?q=" target="_blank">https://huggingface.co/spaces/Felladrin/MiniSearch/</a></li>
-                <li class="commonClass generalSearch"><a href="https://yep.com/web/?q=" target="_blank">https://yep.com/web</a></li>
-                <li class="commonClass generalSearch reRearch"><a href="https://scite.ai/assistant/?q=" target="_blank">https://scite.ai/assistant/</a></li>
-                <li class="commonClass generalSearch codeWindow"><a href="https://www.genspark.ai/search?query=" target="_blank">https://www.genspark.ai/</a></li>
-                <li class="commonClass generalSearch "><a href="https://chat.ariha.ai/?q=" target="_blank">https://chat.ariha.ai/</a></li>
+                <li class="commonClass searchEngine avgSearchEngine querySearch aiModel fullStudy avgStudy"><a href="https://www.perplexity.ai/?q=" target="_blank">https://www.perplexity.ai/</a></li>
+                <li class="commonClass searchEngine avgSearchEngine querySearch aiModel fullStudy avgStudy"><a href="https://www.phind.com/search/?q=" target="_blank">https://www.phind.com/</a></li>
+                <li class="commonClass searchEngine aiModel"><a href="https://komo.ai/" target="_blank">https://komo.ai/</a></li>
+                <li class="commonClass searchEngine aiModel fullStudy avgStudy"><a href="https://you.com/search?q=" target="_blank">https://you.com/</a></li>
+                <li class="commonClass searchEngine aiModel"><a href="https://andisearch.com/?q=" target="_blank">https://andisearch.com/</a></li>
+                <li class="commonClass searchEngine avgSearchEngine aiModel"><a href="https://huggingface.co/spaces/Felladrin/MiniSearch/?q=" target="_blank">https://huggingface.co/spaces/Felladrin/MiniSearch/</a></li>
+                <li class="commonClass searchEngine avgSearchEngine aiModel"><a href="https://yep.com/web/?q=" target="_blank">https://yep.com/web</a></li>
+                <li class="commonClass aiModel reRearch"><a href="https://scite.ai/assistant/?q=" target="_blank">https://scite.ai/assistant/</a></li>
+                <li class="commonClass searchEngine aiModel fullStudy"><a href="https://www.genspark.ai/search?query=" target="_blank">https://www.genspark.ai/</a></li>
+                <li class="commonClass aiModel"><a href="https://chat.ariha.ai/?q=" target="_blank">https://chat.ariha.ai/</a></li>
 
-                <li class="commonClass generalSearch aiSearch"><a href="https://www.waldo.fyi/app/search/?q=" target="_blank">https://www.waldo.fyi/app/search</a></li>
-                <li class="commonClass "><a href="https://www.askan.ai/?q=" target="_blank">https://www.askan.ai/</a></li>
-                <li class="commonClass "><a href="https://noowai.com/?q=" target="_blank">https://noowai.com/</a></li>
-                <li class="commonClass "><a href="https://app.txyz.ai/?q=" target="_blank">https://app.txyz.ai</a></li>
-                <li class="commonClass"><a href="https://gptgo.ai/?q=" target="_blank">https://gptgo.ai/</a></li>
+                <li class="commonClass aiModel"><a href="https://www.waldo.fyi/app/search/?q=" target="_blank">https://www.waldo.fyi/app/search</a></li>
+                <li class="commonClass aiModel"><a href="https://www.askan.ai/?q=" target="_blank">https://www.askan.ai/</a></li>
+                <li class="commonClass aiModel"><a href="https://noowai.com/?q=" target="_blank">https://noowai.com/</a></li>
+                <li class="commonClass aiModel"><a href="https://app.txyz.ai/?q=" target="_blank">https://app.txyz.ai</a></li>
+                <li class="commonClass aiModel"><a href="https://gptgo.ai/?q=" target="_blank">https://gptgo.ai/</a></li>
                 <li class="commonClass"><a href="https://hai.surf/?q=" target="_blank">https://hai.surf/</a></li>
-                <li class="commonClass generalSearch codeWindow"><a href="https://www.hotbot.com/?q=" target="_blank">https://www.hotbot.com//</a></li>
-                <li class="commonClass generalSearch codeWindow"><a href="https://iask.ai/?q=" target="_blank">https://iask.ai/</a></li>
-                <li class="commonClass generalSearch"><a href="https://www.ecosia.org/search/?q=" target="_blank">https://www.ecosia.org/</a></li>
-                <li class="commonClass generalSearch"><a href="https://app.yoursearch.ai/?q=" target="_blank">https://app.yoursearch.ai/</a></li>
+                <li class="commonClass searchEngine aiModel fullStudy"><a href="https://www.hotbot.com/?q=" target="_blank">https://www.hotbot.com//</a></li>
+                <li class="commonClass searchEngine aiModel fullStudy"><a href="https://iask.ai/?q=" target="_blank">https://iask.ai/</a></li>
+                <li class="commonClass searchEngine avgSearchEngine aiModel"><a href="https://www.ecosia.org/search/?q=" target="_blank">https://www.ecosia.org/</a></li>
+                <li class="commonClass searchEngine aiModel"><a href="https://app.yoursearch.ai/?q=" target="_blank">https://app.yoursearch.ai/</a></li>
                 <li class="commonClass"><a href="https://ewasion.github.io/opendirectory-finder/?q=" target="_blank">ewasion.github.io</a></li>
-                <li class="commonClass"><a href="https://www.dogpile.com/serp" target="_blank">dogpile</a></li>
-                <li class="commonClass generalSearch"><a href="https://duckduckgo.com/?q=" target="_blank">duckduckgo</a></li>
-                <li class="commonClass generalSearch"><a href="https://search.yahoo.com/search?p=" target="_blank">Yahoo</a></li>
-                <li class="commonClass generalSearch querySearch"><a href="https://www.bing.com/search?q=" target="_blank">Bing</a></li>
-                <li class="commonClass generalSearch querySearch"><a href="https://www.google.com/search?q=" target="_blank">Google</a></li>
+                <li class="commonClass"><a href="https://www.dogpile.com/serp?q=" target="_blank">dogpile</a></li>
+                <li class="commonClass searchEngine avgSearchEngine"><a href="https://www.startpage.com/sp/search?q=" target="_blank">gibiru</a></li>
+                <li class="commonClass searchEngine avgSearchEngine"><a href="https://gibiru.com/results.html?q=" target="_blank">gibiru</a></li>
+                <li class="commonClass searchEngine avgSearchEngine"><a href="https://duckduckgo.com/?q=" target="_blank">duckduckgo</a></li>
+                <li class="commonClass searchEngine avgSearchEngine"><a href="https://search.yahoo.com/search?p=" target="_blank">Yahoo</a></li>
+                <li class="commonClass searchEngine avgSearchEngine querySearch"><a href="https://www.bing.com/search?q=" target="_blank">Bing</a></li>
+                <li class="commonClass searchEngine avgSearchEngine querySearch"><a href="https://www.google.com/search?q=" target="_blank">Google</a></li>
             </ul>
         </div>
         <div>
@@ -100,16 +102,16 @@
                 <li class="commonClass"><a href="https://www.futuretools.io/?q=" target="_blank">https://www.futuretools.io/</a></li>
                 <li class="commonClass"><a href="https://www.futureailab.com/?q=" target="_blank">https://www.futureailab.com/</a></li>
                 <li class="commonClass"><a href="https://www.aixploria.com/en/?q=" target="_blank">https://www.aixploria.com/en/</a></li>
-                <li class="commonClass"><a href="https://poe.com/?q=" target="_blank">https://poe.com/</a></li>
-                <li class="commonClass"><a href="https://rationale.jina.ai/?q=" target="_blank">https://rationale.jina.ai/</a></li>
-                <li class="commonClass"><a href="https://www.studyfetch.com/" target="_blank">https://www.studyfetch.com/</a></li>
-                <li class="commonClass"><a href="https://convergence.ai/" target="_blank">https://convergence.ai/</a></li>
+                <li class="commonClass aiModel"><a href="https://poe.com/?q=" target="_blank">https://poe.com/</a></li>
+                <li class="commonClass aiModel"><a href="https://rationale.jina.ai/?q=" target="_blank">https://rationale.jina.ai/</a></li>
+                <li class="commonClass aiModel"><a href="https://www.studyfetch.com/" target="_blank">https://www.studyfetch.com/</a></li>
+                <li class="commonClass aiModel"><a href="https://convergence.ai/" target="_blank">https://convergence.ai/</a></li>
             </ul>
         </div>
         <div>
             <div>TOOLS</div>
             <ul id="allLinks">
-                <li class="commonClass imageSearch"><a href="https://molmo.allenai.org/?q=" target="_blank">https://molmo.allenai.org/</a></li>
+                <li class="commonClass imageSearch aiModel"><a href="https://molmo.allenai.org/?q=" target="_blank">https://molmo.allenai.org/</a></li>
                 <li class="commonClass imageSearch"><a href="https://www.duplichecker.com/reverse-image-search.php" target="_blank">https://www.duplichecker.com/reverse-image-search.php</a></li>
                 <li class="commonClass imageSearch"><a href="https://www.vecteezy.com/reverse-image-search" target="_blank">https://www.vecteezy.com/reverse-image-search</a></li>
                 <li class="commonClass textCompare"><a href="https://www.diffchecker.com/text-compare/" target="_blank">https://www.diffchecker.com/text-compare/</a></li>
@@ -154,9 +156,9 @@
 
             // Determine parameter name based on URL pattern
             const paramPattern = href.includes('q=') ? 'q=' :
-                                href.includes('query=') ? 'query=' :
-                                href.includes('text=') ? 'text=' :
-                                href.includes('p=') ? 'p=' : '';
+                href.includes('query=') ? 'query=' :
+                    href.includes('text=') ? 'text=' :
+                        href.includes('p=') ? 'p=' : '';
 
             if (!paramPattern) {
                 //console.warn(`Unknown parameter pattern for ${href}`);
@@ -192,14 +194,17 @@
             //document.querySelector('button[type="button"]').click(), this.location.href = this.location.pathname;//this.location.reload();
             if (event.ctrlKey && (event.key.toLowerCase() === '.'))
                 (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.commonClass a')));
-            if (event.ctrlKey && (event.key.toLowerCase() === 'q'))
-                (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.generalSearch a')));
+
             if (event.ctrlKey && !event.altKey && (event.key.toLowerCase() === ' '))
-                (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.codeSearch a')));
+                (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.avgStudy a')));
             if (event.ctrlKey && event.altKey && (event.key.toLowerCase() === ' '))
-                (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.codeWindow a')));
-            if (event.ctrlKey && (event.key.toLowerCase() === 'z'))
-                (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.aiSearch a')));
+                (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.fullStudy a')));
+
+            if (event.ctrlKey && !event.altKey && (event.key.toLowerCase() === 'q'))
+                (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.avgSearchEngine a')));
+            if (event.ctrlKey && event.altKey && (event.key.toLowerCase() === 'q'))
+                (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.searchEngine a')));
+
             if (event.ctrlKey && (event.key.toLowerCase() === 'c')) //copy
                 copyTextToClipboard(document.getElementById('searchField').value), document.getElementById('searchField').select();
         });
