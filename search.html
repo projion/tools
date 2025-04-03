@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search All</title>
 </head>
 <body>
@@ -40,6 +41,7 @@
             <div>CODE</div>
             <ul id="allLinks">
                 <li class="commonClass aiModel fullStudy avgStudy"><a href="https://duck.ai/" target="_blank">https://duck.ai/</a></li>
+                <li class="commonClass aiModel"><a href="https://deepai.org/" target="_blank">https://deepai.org/</a></li>
                 <li class="commonClass aiModel fullStudy avgStudy"><a href="https://chat.qwen.ai/?q=" target="_blank">https://chat.qwen.ai/</a></li>
                 <li class="commonClass aiModel fullStudy avgStudy"><a href="https://chat.deepseek.com/?q=" target="_blank">https://chat.deepseek.com/</a></li>
                 <li class="commonClass aiModel fullStudy avgStudy"><a href="https://copilot.microsoft.com/?q=" target="_blank">https://copilot.microsoft.com/</a></li>
@@ -114,7 +116,9 @@
                 <li class="commonClass imageSearch aiModel"><a href="https://molmo.allenai.org/?q=" target="_blank">https://molmo.allenai.org/</a></li>
                 <li class="commonClass imageSearch"><a href="https://www.duplichecker.com/reverse-image-search.php" target="_blank">https://www.duplichecker.com/reverse-image-search.php</a></li>
                 <li class="commonClass imageSearch"><a href="https://www.vecteezy.com/reverse-image-search" target="_blank">https://www.vecteezy.com/reverse-image-search</a></li>
+                <li class="commonClass imageInfo"><a href="https://www.pic2map.com/" target="_blank">https://www.pic2map.com/</a></li>
                 <li class="commonClass textCompare"><a href="https://www.diffchecker.com/text-compare/" target="_blank">https://www.diffchecker.com/text-compare/</a></li>
+                <li class="commonClass fontRemover"><a href="https://textcompare.io/font-remover" target="_blank">https://textcompare.io/font-remover</a></li>
                 <li class="commonClass textConvertCase"><a href="https://convertcase.net/?q=" target="_blank">https://convertcase.net/</a></li>
                 <li class="commonClass textReplace"><a href="https://convertcase.net/replace-text/" target="_blank">https://convertcase.net/replace-text/</a></li>
                 <li class="commonClass"><a href="https://www.desmos.com/calculator/zzxbryrahc" target="_blank">https://www.desmos.com/calculator/zzxbryrahc</a></li>
@@ -129,8 +133,26 @@
     <style>
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 10px; /* Optional: Adds some space between the columns */
+            overflow-wrap: break-word;
+        }
+        @media screen and (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* 1 column */
+            }
         }
     </style>
 
