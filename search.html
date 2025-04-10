@@ -227,7 +227,7 @@
             if (event.ctrlKey && event.altKey && (event.key.toLowerCase() === 'q'))
                 (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.searchEngine a')));
 
-            if (event.ctrlKey && (event.key.toLowerCase() === 'c')) //copy
+            if (event.altKey && (event.key.toLowerCase() === 'c')) //copy
                 copyTextToClipboard(document.getElementById('searchField').value), document.getElementById('searchField').select();
         });
 
