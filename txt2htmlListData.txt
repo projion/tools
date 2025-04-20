@@ -1,4 +1,4 @@
-C#
+$$$$ C#
 https://www.linkedin.com/pulse/understanding-anonymous-types-c-md-sukel-ali-8mdyf/
 https://www.milanjovanovic.tech/blog/ef-core-raw-sql-queries?utm_source=LinkedIn&utm_medium=social&utm_campaign=13.01.2024
 https://www.linkedin.com/posts/anton-martyniuk_csharp-dotnet-interviews-activity-7290269972533051392-_yvA/
@@ -10,7 +10,7 @@ https://www.facebook.com/story.php?story_fbid=122200705754204332&id=615561299820
 https://www.linkedin.com/pulse/understanding-anonymous-types-c-md-sukel-ali-8mdyf/
 https://www.linkedin.com/posts/khorgami_understanding-and-preventing-deadlocks-in-ugcPost-7290378165296758785-2M-2/
 
-asp.net
+$$$$ asp.net
 https://www.linkedin.com/posts/ishafatima1907_softwaredevelopment-coding-dotnet-activity-7295724648237834240-11lN/
 https://www.linkedin.com/posts/aymananaam_effortless-global-exception-handling-in-your-activity-7285859114910400512-oWh_/
 
@@ -26,7 +26,7 @@ https://www.linkedin.com/posts/samila99_api-ugcPost-7298527266072842240-IxHy/
 https://www.linkedin.com/posts/djokic-stefan_all-about-caching-in-net-a-beginners-activity-7298998973090926592-zX9O/
 
 
-sql
+$$$$ sql
 https://www.linkedin.com/posts/ugcPost-7297596830215737344-lon7/
 https://www.linkedin.com/posts/ashish-pratap-singh_sql-doc-ugcPost-7294556571781447680-OFtG/
 https://www.linkedin.com/posts/sireeshadev123_sql-questions-ugcPost-7294008536500469760-WyGb/
@@ -42,7 +42,7 @@ https://www.linkedin.com/posts/ugcPost-7294759720697958400-PIMo/
 https://www.linkedin.com/posts/anton-martyniuk_sql-database-interview-activity-7298242541743689729-Pywg/
 
 
-frontend
+$$$$ frontend
 https://www.linkedin.com/posts/nikoloz-pairaziani_here-ugcPost-7302262112058249216-m3Ei/
 
 
