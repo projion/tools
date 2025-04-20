@@ -7,27 +7,34 @@
 </head>
 <body>
     <h1>List of Links</h1>
-    
-    <div id="link-container"></div>
+
+    <div id="content-container"></div>
 
     <script>
         async function fetchData() {
             try {
-                const response = await fetch('txt2htmlListData.txt');
+                const response = await fetch('data.txt');
                 const text = await response.text();
-                const items = text.split('\n');
-                const linkContainer = document.getElementById('link-container');
+                const lines = text.split('\n');
+                const contentContainer = document.getElementById('content-container');
 
-                items.forEach(item => {
-                    if (item.trim()) {
+                lines.forEach(line => {
+                    const trimmedLine = line.trim();
+
+                    if (trimmedLine.startsWith("$$$$")) {
+                        // Create a header for lines starting with $$$$CODE
+                        const header = document.createElement('h2');
+                        header.textContent = trimmedLine.replace("$$$$", "").trim();
+                        contentContainer.appendChild(header);
+                    } else if (trimmedLine) {
+                        // Create a list item with a link
+                        const listItem = document.createElement('li');
                         const link = document.createElement('a');
-                        link.href = item.trim(); // Assuming the TXT file contains URLs
-                        link.textContent = item.trim();
+                        link.href = trimmedLine;
+                        link.textContent = trimmedLine;
                         link.target = "_blank"; // Open links in a new tab
-                        linkContainer.appendChild(link);
-
-                        // Add a line break for spacing
-                        linkContainer.appendChild(document.createElement('br'));
+                        listItem.appendChild(link);
+                        contentContainer.appendChild(listItem);
                     }
                 });
             } catch (error) {
