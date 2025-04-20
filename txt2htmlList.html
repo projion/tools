@@ -17,7 +17,8 @@
                 const text = await response.text();
                 const lines = text.split('\n');
                 const contentContainer = document.getElementById('content-container');
-
+                let olElement = document.createElement('ol'); // Create an ordered list
+                
                 lines.forEach(line => {
                     const trimmedLine = line.trim();
 
@@ -27,16 +28,19 @@
                         header.textContent = trimmedLine.replace("$$$$", "").trim();
                         contentContainer.appendChild(header);
                     } else if (trimmedLine) {
-                        // Create a list item with a link
+                        // Create a numbered list item with a link inside <ol>
                         const listItem = document.createElement('li');
                         const link = document.createElement('a');
                         link.href = trimmedLine;
                         link.textContent = trimmedLine;
                         link.target = "_blank"; // Open links in a new tab
                         listItem.appendChild(link);
-                        contentContainer.appendChild(listItem);
+                        olElement.appendChild(listItem);
                     }
                 });
+
+                // Append the ordered list to the content container
+                contentContainer.appendChild(olElement);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
