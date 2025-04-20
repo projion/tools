@@ -17,8 +17,9 @@
                 const text = await response.text();
                 const lines = text.split('\n');
                 const contentContainer = document.getElementById('content-container');
-                let olElement = document.createElement('ol'); // Create an ordered list
-                
+
+                let currentList = null; // Track the current <ol> element
+
                 lines.forEach(line => {
                     const trimmedLine = line.trim();
 
@@ -27,20 +28,27 @@
                         const header = document.createElement('h2');
                         header.textContent = trimmedLine.replace("$$$$", "").trim();
                         contentContainer.appendChild(header);
+
+                        // Create a new <ol> list for the section
+                        currentList = document.createElement('ol');
+                        contentContainer.appendChild(currentList);
                     } else if (trimmedLine) {
-                        // Create a numbered list item with a link inside <ol>
+                        if (!currentList) {
+                            // Ensure there's an <ol> to append items to
+                            currentList = document.createElement('ol');
+                            contentContainer.appendChild(currentList);
+                        }
+
+                        // Create a numbered list item with a link
                         const listItem = document.createElement('li');
                         const link = document.createElement('a');
                         link.href = trimmedLine;
                         link.textContent = trimmedLine;
                         link.target = "_blank"; // Open links in a new tab
                         listItem.appendChild(link);
-                        olElement.appendChild(listItem);
+                        currentList.appendChild(listItem);
                     }
                 });
-
-                // Append the ordered list to the content container
-                contentContainer.appendChild(olElement);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
