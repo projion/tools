@@ -13,7 +13,7 @@
     <script>
         async function fetchData() {
             try {
-                const response = await fetch('data.txt');
+                const response = await fetch('txt2htmlListData.txt');
                 const text = await response.text();
                 const lines = text.split('\n');
                 const contentContainer = document.getElementById('content-container');
@@ -22,7 +22,7 @@
                     const trimmedLine = line.trim();
 
                     if (trimmedLine.startsWith("$$$$")) {
-                        // Create a header for lines starting with $$$$CODE
+                        // Create a header for lines starting with $$$$
                         const header = document.createElement('h2');
                         header.textContent = trimmedLine.replace("$$$$", "").trim();
                         contentContainer.appendChild(header);
