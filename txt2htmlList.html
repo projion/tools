@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Data from TXT File</title>
+</head>
+<body>
+    <h1>List of Links</h1>
+    
+    <div id="link-container"></div>
+
+    <script>
+        async function fetchData() {
+            try {
+                const response = await fetch('txt2htmlListData.txt');
+                const text = await response.text();
+                const items = text.split('\n');
+                const linkContainer = document.getElementById('link-container');
+
+                items.forEach(item => {
+                    if (item.trim()) {
+                        const link = document.createElement('a');
+                        link.href = item.trim(); // Assuming the TXT file contains URLs
+                        link.textContent = item.trim();
+                        link.target = "_blank"; // Open links in a new tab
+                        linkContainer.appendChild(link);
+
+                        // Add a line break for spacing
+                        linkContainer.appendChild(document.createElement('br'));
+                    }
+                });
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        fetchData();
+    </script>
+</body>
+</html>
