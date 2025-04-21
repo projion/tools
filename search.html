@@ -109,6 +109,12 @@
                 <li class="commonClass aiModel"><a href="https://www.studyfetch.com/" target="_blank">https://www.studyfetch.com/</a></li>
                 <li class="commonClass aiModel"><a href="https://convergence.ai/" target="_blank">https://convergence.ai/</a></li>
             </ul>
+            <ol>
+                <li>convert this phonetic into bangla</li>
+                <li>explain with code examples</li>
+                <li>extract the text from this image</li>
+                <li>what is the meaning of</li>
+            </ol>
         </div>
         <div>
             <div>TOOLS</div>
@@ -137,6 +143,7 @@
             gap: 10px; /* Optional: Adds some space between the columns */
             overflow-wrap: break-word;
         }
+
         @media screen and (max-width: 1024px) {
             .grid-container {
                 grid-template-columns: repeat(3, 1fr); /* 3 columns */
@@ -205,6 +212,12 @@
                 allLinks[i].setAttribute('href', allLinks[i].getAttribute('href').replace(/[^?]+/, ''));
         });
 
+        function appendUsingTemplateLiteral(textToAppend) {
+            const currentValue = document.getElementById('searchField').value;
+            document.getElementById('searchField').value = `${currentValue}${textToAppend}`;
+            showResult(`${currentValue}${textToAppend}`);
+        }
+
         document.addEventListener('keydown', function (event) {
 
             if (event.ctrlKey && event.key === 'Enter') { // Check if Control + Enter is pressed
@@ -214,6 +227,16 @@
             if (event.ctrlKey && event.key === 'Shift')
                 this.location.href = this.location.pathname;
             //document.querySelector('button[type="button"]').click(), this.location.href = this.location.pathname;//this.location.reload();
+
+            if (event.altKey && event.key === '1')
+                appendUsingTemplateLiteral("convert this phonetic into bangla");
+            if (event.altKey && event.key === '2')
+                appendUsingTemplateLiteral("explain with code examples");
+            if (event.altKey && event.key === '3')
+                appendUsingTemplateLiteral("extract the text from this image");
+            if (event.altKey && event.key === '4')
+                appendUsingTemplateLiteral("what is the meaning of ");
+
             if (event.ctrlKey && (event.key.toLowerCase() === '.'))
                 (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.commonClass a')));
 
@@ -227,7 +250,7 @@
             if (event.ctrlKey && event.altKey && (event.key.toLowerCase() === 'q'))
                 (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.searchEngine a')));
 
-            if (event.altKey && (event.key.toLowerCase() === 'c')) //copy
+            if (event.altKey && (event.key.toLowerCase() === 'x')) //copy
                 copyTextToClipboard(document.getElementById('searchField').value), document.getElementById('searchField').select();
         });
 
