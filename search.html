@@ -110,10 +110,12 @@
                 <li class="commonClass aiModel"><a href="https://convergence.ai/" target="_blank">https://convergence.ai/</a></li>
             </ul>
             <ol>
-                <li>convert this phonetic into bangla</li>
+                <li>convert this bangla phonetic into english sentence</li>
+                <li>check the grammatical errors only if error has, not a revised or rephrased version of this.</li>
                 <li>explain with code examples</li>
                 <li>extract the text from this image</li>
-                <li>what is the meaning of</li>
+                <li>what is the meaning of </li>
+                <li>convert this phonetic into bangla</li>
             </ol>
         </div>
         <div>
@@ -229,13 +231,17 @@
             //document.querySelector('button[type="button"]').click(), this.location.href = this.location.pathname;//this.location.reload();
 
             if (event.altKey && event.key === '1')
-                appendUsingTemplateLiteral("convert this phonetic into bangla");
+                appendUsingTemplateLiteral("convert this bangla phonetic into english sentence");
             if (event.altKey && event.key === '2')
-                appendUsingTemplateLiteral("explain with code examples");
+                appendUsingTemplateLiteral("check the grammatical errors only if error has, not a revised or rephrased version of this.");
             if (event.altKey && event.key === '3')
-                appendUsingTemplateLiteral("extract the text from this image");
+                appendUsingTemplateLiteral("explain with code examples");
             if (event.altKey && event.key === '4')
+                appendUsingTemplateLiteral("extract the text from this image");
+            if (event.altKey && event.key === '5')
                 appendUsingTemplateLiteral("what is the meaning of ");
+            if (event.altKey && event.key === '5')
+                appendUsingTemplateLiteral("convert this phonetic into bangla");
 
             if (event.ctrlKey && (event.key.toLowerCase() === '.'))
                 (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.commonClass a')));
