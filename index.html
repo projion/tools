@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search All</title>
+</head>
+<body>
+    <!--
+    => ctrl + mouseout on link = open that link
+    => ctrl + enter  = append textarea's text
+    => ctrl + .  = open all that holds commonClass class
+    => ctrl + " "  = open all that holds avgStudy class
+    => ctrl + altr + " "  = open all that holds fullStudy class
+    => ctrl + q  = open all that holds searchEngine class
+    => ctrl + altr + q  = open all that holds avgSearchEngine class
+    => ctrl + shift  = this.location.reload();
+                => ctrl + z
+    => this url with queryString of q = search
+        searchEngine
+        commonClass
+        avgStudy
+        fullStudy
+        querySearch
+            reRearch
+            invisible      ---not applied to anywhere, but works
+            imageSearch
+            textCompare
+            textConvertCase
+            textReplace
+        C:\Windows\System32\cmd.exe /k start "" "C:\Program Files\Mozilla Firefox\firefox.exe" -private-window https://projion.github.io/tools/search.html & exit
+
+        ?q=hello&p=searchDatap&s=searchDatas&search=searchDatasearch&query=searchDataquery&text=searchDatatext&find=searchDatafind
+    -->
+    <form id="searchForm">
+        <!--<input type="text" id="searchField" placeholder="Enter your search query">-->
+        <textarea id="searchField" style="width:90%;" placeholder="Enter your search passage" autofocus></textarea>
+        <button type="submit">Search</button>
+        <button type="button" id="resetButton">Reset</button>
+    </form>
+
+    <div class="grid-container">
+        <div>
+            <div>CODE</div>
+            <ul id="allLinks">
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://duck.ai/" target="_blank">https://duck.ai/</a></li>
+                <li class="commonClass aiModel"><a href="https://deepai.org/" target="_blank">https://deepai.org/</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://chat.qwen.ai/?q=" target="_blank">https://chat.qwen.ai/</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://chat.deepseek.com/?q=" target="_blank">https://chat.deepseek.com/</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://copilot.microsoft.com/?q=" target="_blank">https://copilot.microsoft.com/</a></li>
+                <li class="commonClass aiModel"><a href="https://labs.perplexity.ai/" target="_blank">https://labs.perplexity.ai/</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://www.blackbox.ai/?q=" target="_blank">https://www.blackbox.ai/</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://chatgpt.com/?q=" target="_blank">https://chatgpt.com/</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://www.hotbot.com/meta-llama-4-maverick?q=" target="_blank">https://www.hotbot.com/meta-llama-4-maverick</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://www.hotbot.com/google-gemini-2.0-flash?q=" target="_blank">https://www.hotbot.com/google-gemini-2.0-flash</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://chat.mistral.ai/chat?q=" target="_blank">https://chat.mistral.ai/chat</a></li>
+                <li class="commonClass aiModel"><a href="https://playground.allenai.org/?q=" target="_blank">https://playground.allenai.org/</a></li>
+                <li class="commonClass aiModel fullStudy avgStudy"><a href="https://grok.com/?q=" target="_blank">https://grok.com/</a></li>
+                <li class="commonClass"><a href="https://www.codeconvert.ai/free-converter?q=" target="_blank">https://www.codeconvert.ai/free-converter</a></li>
+                <li class="commonClass"><a href="https://zzzcode.ai/?q=" target="_blank">https://zzzcode.ai/</a></li>
+                <li class="commonClass aiModel"><a href="https://sdk.vercel.ai/playground?q=" target="_blank">https://sdk.vercel.ai/playground</a></li>
+                <li class="commonClass aiModel"><a href="https://chatgpt.bestim.org/chat/?q=" target="_blank">https://chatgpt.bestim.org/chat/</a></li>
+                <li class="commonClass aiModel"><a href="https://talkai.info/chat/?q=" target="_blank">https://talkai.info/chat/</a></li>
+                <li class="commonClass aiModel"><a href="https://anonchatgpt.com/?q=" target="_blank">https://anonchatgpt.com/</a></li>
+                <li class="commonClass aiModel"><a href="https://jeeves.ai/chat/?text=" target="_blank">https://jeeves.ai/chat</a></li>
+                <li class="commonClass searchEngine aiModel"><a href="https://bagoodex.io/search?q=" target="_blank">https://bagoodex.io/</a></li>
+                <li class="commonClass"><a href="https://beta.character.ai/?q=" target="_blank">https://beta.character.ai/</a></li>
+                <li class="commonClass aiModel"><a href="https://www.chatplayground.ai/?q=" target="_blank">https://www.chatplayground.ai/</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>SEARCH ENGINES</div>
+            <ul id="allLinks">
+                <li class="commonClass searchEngine avgSearchEngine querySearch aiModel fullStudy avgStudy"><a href="https://www.perplexity.ai/?q=" target="_blank">https://www.perplexity.ai/</a></li>
+                <li class="commonClass searchEngine avgSearchEngine querySearch aiModel fullStudy avgStudy"><a href="https://www.phind.com/search/?q=" target="_blank">https://www.phind.com/</a></li>
+                <li class="commonClass searchEngine aiModel"><a href="https://komo.ai/" target="_blank">https://komo.ai/</a></li>
+                <li class="commonClass searchEngine aiModel fullStudy avgStudy"><a href="https://you.com/search?q=" target="_blank">https://you.com/</a></li>
+                <li class="commonClass searchEngine aiModel"><a href="https://andisearch.com/?q=" target="_blank">https://andisearch.com/</a></li>
+                <li class="commonClass searchEngine avgSearchEngine aiModel"><a href="https://huggingface.co/spaces/Felladrin/MiniSearch/?q=" target="_blank">https://huggingface.co/spaces/Felladrin/MiniSearch/</a></li>
+                <li class="commonClass searchEngine avgSearchEngine aiModel"><a href="https://yep.com/web/?q=" target="_blank">https://yep.com/web</a></li>
+                <li class="commonClass aiModel reRearch"><a href="https://scite.ai/assistant/?q=" target="_blank">https://scite.ai/assistant/</a></li>
+                <li class="commonClass searchEngine aiModel fullStudy"><a href="https://www.genspark.ai/search?query=" target="_blank">https://www.genspark.ai/</a></li>
+                <li class="commonClass aiModel"><a href="https://chat.ariha.ai/?q=" target="_blank">https://chat.ariha.ai/</a></li>
+
+                <li class="commonClass aiModel"><a href="https://www.waldo.fyi/app/search/?q=" target="_blank">https://www.waldo.fyi/app/search</a></li>
+                <li class="commonClass aiModel"><a href="https://www.askan.ai/?q=" target="_blank">https://www.askan.ai/</a></li>
+                <li class="commonClass aiModel"><a href="https://noowai.com/?q=" target="_blank">https://noowai.com/</a></li>
+                <li class="commonClass aiModel"><a href="https://app.txyz.ai/?q=" target="_blank">https://app.txyz.ai</a></li>
+                <li class="commonClass aiModel"><a href="https://gptgo.ai/?q=" target="_blank">https://gptgo.ai/</a></li>
+                <li class="commonClass"><a href="https://hai.surf/?q=" target="_blank">https://hai.surf/</a></li>
+                <li class="commonClass searchEngine aiModel fullStudy"><a href="https://www.hotbot.com/?q=" target="_blank">https://www.hotbot.com//</a></li>
+                <li class="commonClass searchEngine aiModel fullStudy"><a href="https://iask.ai/?q=" target="_blank">https://iask.ai/</a></li>
+                <li class="commonClass searchEngine avgSearchEngine aiModel"><a href="https://www.ecosia.org/search/?q=" target="_blank">https://www.ecosia.org/</a></li>
+                <li class="commonClass searchEngine aiModel"><a href="https://app.yoursearch.ai/?q=" target="_blank">https://app.yoursearch.ai/</a></li>
+                <li class="commonClass"><a href="https://ewasion.github.io/opendirectory-finder/?q=" target="_blank">ewasion.github.io</a></li>
+                <li class="commonClass"><a href="https://www.dogpile.com/serp?q=" target="_blank">dogpile</a></li>
+                <li class="commonClass searchEngine avgSearchEngine"><a href="https://www.startpage.com/sp/search?q=" target="_blank">startpage</a></li>
+                <li class="commonClass searchEngine avgSearchEngine"><a href="https://gibiru.com/results.html?q=" target="_blank">gibiru</a></li>
+                <li class="commonClass searchEngine avgSearchEngine"><a href="https://duckduckgo.com/?q=" target="_blank">duckduckgo</a></li>
+                <li class="commonClass searchEngine avgSearchEngine"><a href="https://search.yahoo.com/search?p=" target="_blank">Yahoo</a></li>
+                <li class="commonClass searchEngine avgSearchEngine querySearch"><a href="https://www.bing.com/search?q=" target="_blank">Bing</a></li>
+                <li class="commonClass searchEngine avgSearchEngine querySearch"><a href="https://www.google.com/search?q=" target="_blank">Google</a></li>
+            </ul>
+        </div>
+        <div>
+            <div>OTHERS</div>
+            <ul id="allLinks">
+                <li class="commonClass"><a href="https://www.futurepedia.io/?q=" target="_blank">https://www.futurepedia.io/</a></li>
+                <li class="commonClass"><a href="https://www.futuretools.io/?q=" target="_blank">https://www.futuretools.io/</a></li>
+                <li class="commonClass"><a href="https://www.futureailab.com/?q=" target="_blank">https://www.futureailab.com/</a></li>
+                <li class="commonClass"><a href="https://www.aixploria.com/en/?q=" target="_blank">https://www.aixploria.com/en/</a></li>
+                <li class="commonClass aiModel"><a href="https://poe.com/?q=" target="_blank">https://poe.com/</a></li>
+                <li class="commonClass aiModel"><a href="https://rationale.jina.ai/?q=" target="_blank">https://rationale.jina.ai/</a></li>
+                <li class="commonClass aiModel"><a href="https://www.studyfetch.com/" target="_blank">https://www.studyfetch.com/</a></li>
+                <li class="commonClass aiModel"><a href="https://convergence.ai/" target="_blank">https://convergence.ai/</a></li>
+            </ul>
+            <ol>
+                <li>convert this bangla phonetic into english sentence</li>
+                <li>check the grammatical errors only if error has, not a revised or rephrased version of this.</li>
+                <li>explain with code examples</li>
+                <li>extract the text from this image</li>
+                <li>what is the meaning of </li>
+                <li>convert this phonetic into bangla</li>
+            </ol>
+        </div>
+        <div>
+            <div>TOOLS</div>
+            <ul id="allLinks">
+                <li class="commonClass imageSearch aiModel"><a href="https://molmo.allenai.org/?q=" target="_blank">https://molmo.allenai.org/</a></li>
+                <li class="commonClass imageSearch"><a href="https://www.duplichecker.com/reverse-image-search.php" target="_blank">https://www.duplichecker.com/reverse-image-search.php</a></li>
+                <li class="commonClass imageSearch"><a href="https://www.vecteezy.com/reverse-image-search" target="_blank">https://www.vecteezy.com/reverse-image-search</a></li>
+                <li class="commonClass imageInfo"><a href="https://www.pic2map.com/" target="_blank">https://www.pic2map.com/</a></li>
+                <li class="commonClass textCompare"><a href="https://www.diffchecker.com/text-compare/" target="_blank">https://www.diffchecker.com/text-compare/</a></li>
+                <li class="commonClass fontRemover"><a href="https://textcompare.io/font-remover" target="_blank">https://textcompare.io/font-remover</a></li>
+                <li class="commonClass textConvertCase"><a href="https://convertcase.net/?q=" target="_blank">https://convertcase.net/</a></li>
+                <li class="commonClass textReplace"><a href="https://convertcase.net/replace-text/" target="_blank">https://convertcase.net/replace-text/</a></li>
+                <li class="commonClass"><a href="https://www.desmos.com/calculator/zzxbryrahc" target="_blank">https://www.desmos.com/calculator/zzxbryrahc</a></li>
+                <li class="commonClass handy"><a href="https://receive-smss.com/" target="_blank">https://receive-smss.com/</a></li>
+                <li class="commonClass handy"><a href="https://tempmailo.com/" target="_blank">https://tempmailo.com/</a></li>
+                <li class="commonClass handy"><a href="https://tempmail100.com/" target="_blank">https://tempmail100.com/</a></li>
+                <li class="commonClass handy"><a href="https://translate.google.com/?sl=en&tl=bn&text=" target="_blank">https://translate.google.com/</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px; /* Optional: Adds some space between the columns */
+            overflow-wrap: break-word;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* 1 column */
+            }
+        }
+    </style>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function (event) { // Add event listener to the form
+            event.preventDefault(); // Prevent form submission
+            var enteredSearchQuery = document.getElementById('searchField').value;
+            var allLinks = document.querySelectorAll('#allLinks li a'); //var allLinks = document.getElementById('allLinks').getElementsByTagName('a');
+            //for (var i = 0; i < allLinks.length; i++)   // Redirect to the selected search engine's results page
+            //    allLinks[i].setAttribute('href', allLinks[i].getAttribute('href') + "?q=" + enteredSearchQuery);
+            allLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                const newUrl = updateUrlParameters(enteredSearchQuery, href);
+                link.setAttribute('href', newUrl);
+            });
+        });
+        function updateUrlParameters(searchQuery, href) {
+            // Check if search query exists
+            if (!searchQuery.trim()) {
+                // Remove any query parameters if no search query
+                return href.split('?')[0];
+            }
+
+            // Determine parameter name based on URL pattern
+            const paramPattern = href.includes('q=') ? 'q=' :
+                href.includes('query=') ? 'query=' :
+                    href.includes('text=') ? 'text=' :
+                        href.includes('p=') ? 'p=' : '';
+
+            if (!paramPattern) {
+                //console.warn(`Unknown parameter pattern for ${href}`);
+                return href;
+            }
+
+            // Update the URL with the new search query
+            const baseUrl = href.split('?')[0];
+            const existingParams = href.split('?')[1]?.split('&') || [];
+            const newParams = existingParams.filter(param => !param.startsWith(paramPattern));
+            newParams.unshift(`${paramPattern}${encodeURIComponent(searchQuery)}`);
+
+            return `${baseUrl}?${newParams.join('&')}`;
+        }
+
+        document.querySelectorAll('.invisible').forEach(e => e.style.display = 'none');
+
+        document.getElementById('resetButton').addEventListener('click', function () {  // Add event listener to the reset button
+            document.getElementById('searchField').value = ''; // Clear the search field
+            var allLinks = document.getElementById('allLinks').getElementsByTagName('a');
+            for (var i = 0; i < allLinks.length; i++)  // Restore the original links of the search engines
+                allLinks[i].setAttribute('href', allLinks[i].getAttribute('href').replace(/[^?]+/, ''));
+        });
+
+        function appendUsingTemplateLiteral(textToAppend) {
+            const currentValue = document.getElementById('searchField').value;
+            document.getElementById('searchField').value = `${currentValue}${textToAppend}`;
+            showResult(`${currentValue}${textToAppend}`);
+        }
+
+        document.addEventListener('keydown', function (event) {
+
+            if (event.ctrlKey && event.key === 'Enter') { // Check if Control + Enter is pressed
+                var submitButton = document.querySelector('button[type="submit"]'); // Find the submit button by its text or class/id
+                submitButton.click(); // Simulate a click on the submit button
+            }
+            if (event.ctrlKey && event.key === 'Shift')
+                this.location.href = this.location.pathname;
+            //document.querySelector('button[type="button"]').click(), this.location.href = this.location.pathname;//this.location.reload();
+
+            if (event.altKey && event.key === '1')
+                appendUsingTemplateLiteral("\nconvert this bangla phonetic into english sentence");
+            if (event.altKey && event.key === '2')
+                appendUsingTemplateLiteral("\ncheck the grammatical errors only if error has, not a revised or rephrased version of this.");
+            if (event.altKey && event.key === '3')
+                appendUsingTemplateLiteral("\nexplain with code examples");
+            if (event.altKey && event.key === '4')
+                appendUsingTemplateLiteral("\nextract the text from this image");
+            if (event.altKey && event.key === '5')
+                appendUsingTemplateLiteral("what is the meaning of ");
+            if (event.altKey && event.key === '5')
+                appendUsingTemplateLiteral("\nconvert this phonetic into bangla");
+
+            if (event.ctrlKey && (event.key.toLowerCase() === '.'))
+                (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.commonClass a')));
+
+            if (event.ctrlKey && !event.altKey && (event.key.toLowerCase() === ' '))
+                (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.avgStudy a')));
+            if (event.ctrlKey && event.altKey && (event.key.toLowerCase() === ' '))
+                (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.fullStudy a')));
+
+            if (event.ctrlKey && !event.altKey && (event.key.toLowerCase() === 'q'))
+                (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.avgSearchEngine a')));
+            if (event.ctrlKey && event.altKey && (event.key.toLowerCase() === 'q'))
+                (document.querySelector('button[type="submit"]').click(), openNewTabs(document.querySelectorAll('.searchEngine a')));
+
+            if (event.altKey && (event.key.toLowerCase() === 'x')) //copy
+                copyTextToClipboard(document.getElementById('searchField').value), document.getElementById('searchField').select();
+        });
+
+        document.querySelectorAll('ul').forEach(x => x.addEventListener('mouseout', function (e) {
+            if (e.target.tagName === 'A' && e.ctrlKey) {
+                e.preventDefault(); // Prevent the default action
+                setTimeout(() => { // Wait for 300ms before executing the following code
+                    openNewTabs(e.target.href); // Call openNewTabs after the delay
+                }, 300); // Delay in milliseconds
+            }
+        }));
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function getLocalWebpageQuery() {   // Assuming you have a function that extracts the query parameter from your local webpage URL
+            // Example: Extracting the query parameter from a URL like "file:///D:/casual/others/search.html?q=example"
+            const url = window.location.href; // Get the current page URL
+            var queryValue = new URLSearchParams(new URL(url).search).toString() == "" ? null : (new URL(url).searchParams.get('q')).toString();
+            return queryValue;
+        }
+
+        function constructCustomSearchURL(query) {  // Function to construct the Custom search URL with the extracted query
+            if (!query) {
+                console.error("No query found.");
+                return;
+            }
+            var modifiedLinksArray = [];
+            document.querySelectorAll('.querySearch a').forEach(function (link) {
+                var querySearchLink = link + query; //const googleSearchURL = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+                modifiedLinksArray.push(querySearchLink);
+            });
+            return modifiedLinksArray;
+        }
+        function openNewTabs(urls) {
+            if (urls == null)
+                return;
+            else if (typeof urls === 'string')
+                urls = [urls]; // Convert the single URL string to an array
+            urls.forEach(function (link) {
+                if (link)
+                    window.open(link, '_blank');
+                else
+                    console.log("Failed to construct Google search URL.");
+            });
+        }
+        function openNewTabsExceptLastForQuery(urls) {
+            if (urls == null)
+                return;
+            else if (typeof urls === 'string')
+                urls = [urls]; // Convert the single URL string to an array
+            for (let i = 0; i < urls.length - 1; i++) {
+                const link = urls[i];
+                if (link)
+                    window.open(link, '_blank');
+                else
+                    console.log("Failed to construct search URL from query.");
+            }
+            if (urls[urls.length - 1])
+                window.location.href = urls[urls.length - 1];
+        }
+        function performCustomSearchFromLocalPageQuery() {
+            openNewTabsExceptLastForQuery(constructCustomSearchURL(getLocalWebpageQuery()));
+        }
+        performCustomSearchFromLocalPageQuery();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function copyTextToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    console.log("Text copied to clipboard");
+                }).catch(err => {
+                    console.error("Could not copy text: ", err);
+                });
+            } else {    // Fallback for older browsers
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    console.log("Text copied to clipboard");
+                } catch (err) {
+                    console.error("Could not copy text: ", err);
+                }
+                document.body.removeChild(textArea);
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
